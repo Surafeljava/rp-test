@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import { LandingScreen, MarketScreen, OrderBookScreen } from "./screens";
+
+import AppBar from "./screens/shared/AppBar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AppBar/>
+      <Routes>
+        <Route path="/" element={<LandingScreen/>}/>
+        <Route path="/market/:token" element={<MarketScreen/>}/>
+        <Route path="/orderbook/:token" element={<OrderBookScreen/>}/>
+      </Routes>
+    </Router>
   );
 }
 
