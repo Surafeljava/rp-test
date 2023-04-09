@@ -35,7 +35,7 @@ export default function LandingScreen() {
                 </div>
 
             </Link>
-        </div>
+          </div>
         </div>
       </div>
     </main>

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { constants, utils } from "../../constants";
 
@@ -21,7 +20,7 @@ export default function CardItem({address}) {
     return (
         <div className="flex flex-col w-1/2 md:w-1/4 p-2 ">
             {data!=null ? (
-                <Link to={`/orderbook/${address.name}?quoteToken=${address.address}&baseToken=${constants.usdc.address}`} className="flex flex-col rounded-3xl px-6 py-8 h-[300px] hover:scale-[99%] duration-300 group hover:cursor-pointer" 
+                <a href={`/orderbook/${address.name}?quoteToken=${address.address}&baseToken=${constants.usdc.address}`} className="flex flex-col rounded-3xl px-6 py-8 h-[300px] hover:scale-[99%] duration-300 group hover:cursor-pointer" 
                 style={{backgroundColor:address.color}}>
                     <div className='flex flex-row' >
                         <div className="flex flex-col flex-grow ">
@@ -40,7 +39,7 @@ export default function CardItem({address}) {
                     <div className="flex flex-row w-full justify-center items-center flex-grow">
                         <img alt="token" src={address.imageUrl} width={150} height={150} className='group-hover:scale-110 duration-300'/>
                     </div>
-                </Link>
+                </a>
             ) : (
                 <div className="flex flex-col rounded-3xl px-6 py-8 h-[300px] hover:scale-[99%] duration-300 group hover:cursor-pointer" 
                 style={{backgroundColor:address.color}}>
